@@ -1,0 +1,235 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+button {
+  padding: 0.5em 0.75em;
+  margin: 0.4em 0.4em;
+  min-width: 18ch;
+  max-width: 18ch;
+  text-align: left;
+  background-color: #ddd;
+  color: #333;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+button.on {
+  background-color: #333;
+  color: #bbb;
+}
+
+p.btncap {
+  margin: 0.4em 0.4em;
+  padding: 0 0.2em;
+  color: #333;
+  border-bottom: 2px solid #333;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.shift-to-above {
+  margin-top: 0.75em;
+  margin-bottom: 2em;
+  font-style: italic;
+}
+.center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.desc {
+  margin: 1.5em 0.4em;
+}
+.wider_buttons button {
+  display: block;
+  min-width: 18ch;
+  max-width: 18ch;
+}
+.horns button {
+  text-align: center;
+  display: block;
+  min-width: 27ch;
+  width: 180px;
+}
+.tarot button {
+  text-align: center;
+  display: block;
+  min-width: 11ch;
+  width: 95px;
+}
+button {
+  display: block;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 0px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.comparison-carousel {
+  overflow: hidden;
+}
+
+.comparison-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 0px solid #bbb;
+  border-radius: 0px;
+  padding: 0;
+  font-size: 0;
+}
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
