@@ -21,6 +21,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -29,11 +30,15 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="">
 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/bootstrap.min.js"></script>
+  <script src="./static/js/select.js"></script>
+
 </head>
 <body>
 
@@ -114,49 +119,55 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/asal-mshk-j5YvQDGYNsY-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/137983792.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/brian-wangenheim-PcsCKJryfK0-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/4239580.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/mitchell-luo-CMng5BzPv1o-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/629843553.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/197597752.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-coffee">
           <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/leah-hetteberg-cZL53ayxS44-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/203744585.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-toby">
           <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/marcel-strauss-_x9ITyYBcN4-unsplash.mp4"
+            <source src="./static/videos/adobestock/ours/93356408.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/df1.mp4"
+            <source src="./static/videos/adobestock/ours/413701710.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-mask">
           <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/unsplash/ours/df2.mp4"
+            <source src="./static/videos/adobestock/ours/101506063.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/adobestock/ours/451512814.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -181,1351 +192,1475 @@
 </section>
 
 
-<section class="section hero">
-  <div class="container">
-    <!-- Results. -->
-    <h2 class="title is-3">Visual comparisons on in-the-wild images from <a href="https://unsplash.com/">Unsplash</a>.</h2>
-
-    <!-- Example 1 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/asal-mshk-j5YvQDGYNsY-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/asal-mshk-j5YvQDGYNsY-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 1 -->
-
-    <!-- Example 2 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/benjamin-rascoe-Z7b2Px6yT40-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/benjamin-rascoe-Z7b2Px6yT40-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 2 -->
-
-    <!-- Example 3 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/brian-wangenheim-PcsCKJryfK0-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/brian-wangenheim-PcsCKJryfK0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 3 -->
-
-    <!-- Example 4 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/leah-hetteberg-cZL53ayxS44-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/leah-hetteberg-cZL53ayxS44-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 4 -->
-
-    <!-- Example 5 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/leah-hetteberg-Fbl1i1WhAQ8-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/leah-hetteberg-Fbl1i1WhAQ8-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 5 -->
-
-    <!-- Example 6 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/marcel-strauss-_x9ITyYBcN4-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/marcel-strauss-_x9ITyYBcN4-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 6 -->
-
-    <!-- Example 7 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/marie-michele-bouchard-WIAWEPBuHa0-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/marie-michele-bouchard-WIAWEPBuHa0-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 7 -->
-
-    <!-- Example 8 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/mitchell-luo-CMng5BzPv1o-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/mitchell-luo-CMng5BzPv1o-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 8 -->
-
-    <!-- Example 9 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/nassim-boughazi-dodzmVtjoKs-unsplash.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/pws/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/pifu/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/iper/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/texture/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <!-- empty space -->
-            </div>
-          </div>
-        </div>
-
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/unsplash/magic123/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
-
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/phorhum/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
-
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/s3f/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
-
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/unsplash/ours/nassim-boughazi-dodzmVtjoKs-unsplash.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 9 -->
-
+<section class="section">
+  <div class="container is-max-desktop">
 
     <!-- Results. -->
-    <h2 class="title is-3">Visual comparisons on the <a href="https://github.com/ytrock/THuman2.0-Dataset">THuman2.0 dataset</a>.</h2>
+    <h2 class="title is-3">Visual comparisons:</h2>
 
-    <!-- Example 1 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0014.png"/>
+    <h3 class="title is-5">
+
+        <ul class="nav nav-pills nav-justified" id="sim-view-ul" style="width: 100%">
+          Dataset:
+          <li role="presentation" class="active"><a href="javascript: void(0);" onclick="ChangeData(0);">In-the-wild images from AdobeStock.</a></li>
+          <li role="presentation"><a href="javascript: void(0);" onclick="ChangeData(1);">THuman2.0 dataset.</a></li>
+        </ul>
+
+    </h3>
+
+  </div>
+</section>
+
+
+
+<!-- adobestock comparison carousel -->
+<section id="adobestock" class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="adobestock-comparison-carousel" class="carousel comparison-carousel">
+        <div class="item item-137983792">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_137983792.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/adobestock/pws/137983792.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/pifu/137983792.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/iper/137983792.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 7 ours -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/ours/137983792.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
             </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
 
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0014.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
+          <div class="columns">
               <!-- empty space -->
-            </div>
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/texture/137983792.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/adobestock/magic123/137983792.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 phorhum-->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/TeCH/137983792.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+
           </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0014.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
+        <div class="item item-4239580">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_4239580.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
+              <!-- video 1 pws -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/adobestock/pws/4239580.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
+              <!-- video 2 pifu -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/pifu/4239580.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0014.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 1 -->
+              <!-- video 3 iper -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/iper/4239580.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
 
-    <!-- Example 2 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0057.png"/>
+              <!-- video 7 ours -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/ours/4239580.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
             </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
 
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0057.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
+          <div class="columns">
               <!-- empty space -->
-            </div>
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/texture/4239580.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/adobestock/magic123/4239580.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 phorhum-->
+              <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/adobestock/TeCH/4239580.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+
           </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0057.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
+        <div class="item item-629843553">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_629843553.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/629843553.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/629843553.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0057.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 2 -->
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/629843553.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
 
-    <!-- Example 3 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0088.png"/>
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/629843553.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/629843553.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/629843553.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/629843553.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
             </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
+            <!-- End Example 1 -->
         </div>
 
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0088.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+        <div class="item item-93356408">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_93356408.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/93356408.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/93356408.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/93356408.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/93356408.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/93356408.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/93356408.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/93356408.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
         </div>
 
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+        <div class="item item-203744585">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_203744585.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/203744585.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/203744585.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/203744585.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/203744585.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/203744585.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/203744585.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/203744585.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
         </div>
 
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+        <div class="item item-197597752">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_197597752.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/197597752.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/197597752.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/197597752.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/197597752.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/197597752.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/197597752.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/197597752.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
         </div>
 
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+        <div class="item item-413701710">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_413701710.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/413701710.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/413701710.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/413701710.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/413701710.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/413701710.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/413701710.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/413701710.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
         </div>
+
+        <div class="item item-101506063">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_101506063.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/101506063.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/101506063.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/101506063.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/101506063.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/101506063.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/101506063.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/101506063.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
+        </div>
+
+        <div class="item item-451512814">
+            <!-- Example 1 -->
+            <div class="columns">
+                <!-- input image -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <img id="cmp_im_4" style="width: 100%" src="./static/images/AdobeStock_451512814.png"/>
+                    </div>
+                    <center style="font-size:15px;">Input image</center>
+                  </div>
+                </div>
+
+                <!-- video 1 pws -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/pws/451512814.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+                </div>
+
+                <!-- video 2 pifu -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/pifu/451512814.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+                </div>
+
+                <!-- video 3 iper -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/iper/451512814.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+                </div>
+
+                <!-- video 7 ours -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/ours/451512814.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">Ours</center>
+                </div>
+
+              </div>
+
+            <div class="columns">
+                <!-- empty space -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                  <div class="hyper-grid-wrapper">
+                    <div class="hyper-ref-rgb">
+                      <!-- empty space -->
+                    </div>
+                  </div>
+                </div>
+                <!-- video 4 texture -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/texture/451512814.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+                </div>
+
+                <!-- video 5 magic123 -->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                      <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/adobestock/magic123/451512814.mp4" type="video/mp4"/>
+                      </video>
+                      <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+                </div>
+
+                <!-- video 6 phorhum-->
+                <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                   <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                       <source src="./static/videos/adobestock/TeCH/451512814.mp4" type="video/mp4" autoplay muted/>
+                   </video>
+                   <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+                </div>
+
+
+            </div>
+            <!-- End Example 1 -->
+        </div>
+
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
+
+<!-- thuman comparison carousel -->
+<section id="thuman" class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="thuman-comparison-carousel" class="carousel comparison-carousel">
+
+        <div class="item item-0014">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0014.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0014.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+            </div>
+
+          <div class="columns">
               <!-- empty space -->
-            </div>
-          </div>
-        </div>
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0088.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0014.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0014.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0088.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 3 -->
-
-    <!-- Example 4 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0174.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0174.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
               <!-- empty space -->
-            </div>
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
           </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0174.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
+        <div class="item item-0057">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0057.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0057.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0174.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 4 -->
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
 
-    <!-- Example 5 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0324.png"/>
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+
             </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
 
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0324.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
+          <div class="columns">
               <!-- empty space -->
-            </div>
-          </div>
-        </div>
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0324.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
-        </div>
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0057.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
-        </div>
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
-        </div>
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0057.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0324.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
-        </div>
-    </div>
-    <!-- End Example 5 -->
-
-    <!-- Example 6 -->
-    <div class="columns">
-        <!-- input image -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
-              <img id="cmp_im_4" style="width: 100%" src="./static/images/0445.png"/>
-            </div>
-            <center style="font-size:15px;">Input image</center>
-          </div>
-        </div>
-
-        <!-- video 1 pws -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/pws/0445.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
-        </div>
-
-        <!-- video 2 pifu -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/pifu/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
-        </div>
-
-        <!-- video 3 iper -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/iper/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
-        </div>
-
-        <!-- video 4 texture -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/texture/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
-        </div>
-    </div>
-
-    <div class="columns">
-        <!-- empty space -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-          <div class="hyper-grid-wrapper">
-            <div class="hyper-ref-rgb">
               <!-- empty space -->
-            </div>
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
           </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 5 magic123 -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-              <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                <source src="./static/videos/thuman/magic123/0445.mp4" type="video/mp4"/>
-              </video>
-              <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+        <div class="item item-0088">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0088.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0088.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+            </div>
+
+          <div class="columns">
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0088.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0088.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
+
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 6 phorhum-->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/phorhum/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+        <div class="item item-0174">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0174.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0174.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+            </div>
+
+          <div class="columns">
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0174.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0174.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
+
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 7 s3f -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/s3f/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+        <div class="item item-0324">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0324.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0324.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+            </div>
+
+          <div class="columns">
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0324.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0324.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
+
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+          <!-- End Example 1 -->
         </div>
 
-        <!-- video 8 ours -->
-        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-           <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
-               <source src="./static/videos/thuman/ours/0445.mp4" type="video/mp4" autoplay muted/>
-           </video>
-           <center style="font-size:15px;">Ours</center>
+        <div class="item item-0445">
+          <!-- Example 1 -->
+          <div class="columns">
+              <!-- input image -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <img id="cmp_im_4" style="width: 100%" src="./static/images/0445.png"/>
+                  </div>
+                  <center style="font-size:15px;">Input image</center>
+                </div>
+              </div>
+
+              <!-- video 1 pws -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/pws/0445.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">PwS baseline [AlBahar et al. 2021]</center>
+              </div>
+
+              <!-- video 2 pifu -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/pifu/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PIFu [Saito et al. 2019]</center>
+              </div>
+
+              <!-- video 3 iper -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/iper/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Impersonator++ [Liu et al. 2021]</center>
+              </div>
+
+              <!-- video 9 s3f-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/s3f/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">S3F [Corona et al. 2023]</center>
+              </div>
+
+              <!-- video 8 ours -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/ours/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">Ours</center>
+              </div>
+
+            </div>
+
+          <div class="columns">
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+              <!-- video 4 texture -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/texture/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TEXTure [Richardson et al. 2023]</center>
+              </div>
+
+              <!-- video 5 magic123 -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                    <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                      <source src="./static/videos/thuman/magic123/0445.mp4" type="video/mp4"/>
+                    </video>
+                    <center style="font-size:15px;">Magic123 [Qian et al. 2023]</center>
+              </div>
+
+              <!-- video 6 TeCH-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/TeCH/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">TeCH [Huang et al. 2023]</center>
+              </div>
+
+              <!-- video 7 phorhum-->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                 <video autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                     <source src="./static/videos/thuman/phorhum/0445.mp4" type="video/mp4" autoplay muted/>
+                 </video>
+                 <center style="font-size:15px;">PHORHUM [Alldieck et al. 2022]</center>
+              </div>
+
+              <!-- empty space -->
+              <div class="column is-one-sixth-desktop is-one-sixth-tablet">
+                <div class="hyper-grid-wrapper">
+                  <div class="hyper-ref-rgb">
+                    <!-- empty space -->
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+          <!-- End Example 1 -->
         </div>
+
+      </div>
     </div>
-    <!-- End Example 6 -->
-
-
+  </div>
+</section>
 
 
 
