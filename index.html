@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Single-Image 3D Human Digitization with Shape-Guided Diffusion.">
+        content="Human-SGD">
   <meta name="keywords" content="Shape-Guided Diffusion, human-sgd, 3D human">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Single-Image 3D Human Digitization with Shape-Guided Diffusion</title>
+  <title>Human-SGD</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYDM4R48SL"></script>
@@ -48,7 +48,34 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Single-Image 3D Human Digitization with Shape-Guided Diffusion</h1>
+          <h1 class="title is-1 publication-title">Human-SGD: Single-Image 3D Human Digitization with Shape-Guided Diffusion</h1>
+
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://badouralbahar.github.io/">Badour AlBahar</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://shunsukesaito.github.io/">Shunsuke Saito</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://hytseng0509.github.io/">Hung-Yu Tseng</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://changilkim.com/">Changil Kim</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://johanneskopf.de/">Johannes Kopf</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a><sup>3</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Kuwait University, </span>
+            <span class="author-block"><sup>2</sup>Meta, </span>
+            <span class="author-block"><sup>3</sup>University of Maryland</span>
+          </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -88,7 +115,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (coming soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
@@ -101,6 +128,13 @@
                   <span>Data</span>
                   </a>
               </span> -->
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="#BibTeX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>BibTeX</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -179,15 +213,58 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present an approach to generate a 360-degree view of a person with a consistent, high-resolution appearance from a <strong>single</strong> input image.
+          </p>
+          <p>
+            NeRF and its variants typically require videos or images from different viewpoints. Most existing approaches taking monocular input either rely on ground-truth 3D scans for supervision or lack 3D consistency.  While recent 3D generative models show promise of 3D consistent human digitization, these approaches do not generalize well to diverse clothing appearances, and the results lack photorealism.
+          </p>
+          <p>
+            Unlike existing work, we utilize high-capacity 2D diffusion models pretrained for general image synthesis tasks as an appearance prior of clothed humans. To achieve better 3D consistency while retaining the input identity, we progressively synthesize multiple views of the human in the input image by inpainting missing regions with shape-guided diffusion conditioned on silhouette and surface normal. We then fuse these synthesized multi-view images via inverse rendering to obtain a fully textured high-resolution 3D mesh of the given person.
+            Experiments show that our approach outperforms prior methods and achieves photorealistic 360-degree synthesis of a wide range of clothed humans with complex textures from a single image.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+    <!--/ Abstract. -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
 
     <!-- Method. -->
     <div class="container has-text-centered is-max-desktop">
         <h2 class="title is-3">Method Overview</h2>
-        <img src="static/images/overview_multiviewsyn.png" alt="method overview" style="width:100%;" >
-        <img src="static/images/overview_multiviewfusion.png" alt="method overview" style="width:100%;" >
     </div>
     <!--/ Method. -->
-
+    <div class="content has-text-justified">
+      <img src="static/images/overview_multiviewsyn.png" alt="method overview" style="width:100%;" >
+      <p>
+        To generate a 360-degree view of a person from a <strong>single</strong> image, we first synthesize multi-view images of the person.
+        We use off-the-shelf methods to infer the 3D geometry and synthesize an initial back-view of the person as a guidance.
+        We add our input view and the synthesized initial back-view to our support set.
+        To generate a new view, we aggregate all the visible pixels from our support set by blending their RGB color, weighted by visibility, viewing angles, and the distance to missing regions.
+        To hallucinate the unseen appearance and synthesize view, we use a pretrained inpainting diffusion model guided by shape cues (normal and silhouette maps).
+        We include the generated view in our support set and repeat this process for all the remaining views.
+      </p>
+    </div>
+    <div class="content has-text-justified">
+      <img src="static/images/overview_multiviewfusion.png" alt="method overview" style="width:100%;">
+      <p>
+        We then fuse these synthesized multi-view images to obtain a textured 3D human mesh.
+        We use the computed UV parameterization to optimize a UV texture map with the geometry fixed.
+        In each iteration, we differentiably render the UV texture map in every synthesized view from our set of views.
+        We minimize the reconstruction loss between the rendered view and our synthesized view using both LPIPS loss and L1 loss.
+        The fusion results in a textured mesh that can be rendered from any view.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -1740,6 +1817,44 @@
 
 
 </section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{albahar2023humansgd,
+  author    = {AlBahar, Badour and Saito, Shunsuke and Tseng, Hung-Yu and Kim, Changil and Kopf, Johannes and Huang, Jia-Bin},
+  title     = {Single-Image 3D Human Digitization with Shape-Guided Diffusion},
+  booktitle = {SIGGRAPH Asia},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+<!-- References. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">References</h2>
+
+        <div class="content has-text-justified">
+          We compare our 360-degree view synthesis approach with:
+          <ul>
+            <li>Pose with Style (PwS) baseline: We use <a href="https://pose-with-style.github.io/">Pose with Style: Detail-Preserving Pose-Guided Image Synthesis with Conditional StyleGAN</a> to generate multi-view images and then fuse them using our multi-view fusion. </li>
+            <li><a href="https://shunsukesaito.github.io/PIFu/">PIFu: Pixel-Aligned Implicit Function for High-Resolution Clothed Human Digitization</a>.</li>
+            <li><a href="https://github.com/iPERDance/iPERCore">Impersonator++. Liquid Warping GAN with Attention: A Unified Framework for Human Image Synthesis</a>.</li>
+            <li><a href="https://texturepaper.github.io/TEXTurePaper/">TEXTure: Text-Guided Texturing of 3D Shapes</a>. To make it conditional on an input image, we use the input image directly instead of generating an initial view from the depth-to-image diffusion model.</li>
+            <li><a href="https://guochengqian.github.io/project/magic123/">Magic123: One Image to High-Quality 3D Object Generation Using Both 2D and 3D Diffusion Priors</a>.</li>
+            <li><a href="https://enriccorona.github.io/s3f/">S3F: Structured 3D Features for Reconstructing Relightable and Animatable Avatars</a>.</li>
+            <li><a href="https://phorhum.github.io/">PHORHUM: Photorealistic Monocular 3D Reconstruction of Humans Wearing Clothing</a>.</li>
+            <li><a href="https://huangyangyi.github.io/TeCH/">TeCH: Text-guided Reconstruction of Lifelike Clothed Humans</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!--/ References. -->
 
 
 <footer class="footer">
